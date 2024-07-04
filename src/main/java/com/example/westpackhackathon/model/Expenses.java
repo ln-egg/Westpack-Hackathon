@@ -1,8 +1,5 @@
 package com.example.westpackhackathon.model;
 
-
-
-
 public class Expenses {
     private int ID_Expenses;
     private Type_Expenses type;
