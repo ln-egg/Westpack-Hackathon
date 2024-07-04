@@ -3,7 +3,7 @@ package com.example.westpackhackathon.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class MainController {
+public class HelloController {
     @FXML
     private Label welcomeText;
 
