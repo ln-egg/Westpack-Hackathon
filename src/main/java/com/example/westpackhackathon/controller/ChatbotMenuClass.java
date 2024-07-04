@@ -11,7 +11,7 @@ public class ChatbotMenuClass {
     }
 
     public static void DisplayMenu() {
-        System.out.println("Hello [User]! How can I help today?");
+        System.out.println("Hello [Username]! How can I help today?");
         // Dropdown button options:
         System.out.println("--------------------------------------------------");
         System.out.println("1. Display my current Plans");
@@ -22,6 +22,7 @@ public class ChatbotMenuClass {
         System.out.println("--------------------------------------------------");
         // User is asked to pick one of the options
         System.out.println("Enter your choice (1-4) or press 0 to exit: ");
+
     }
 
     public static int GetUserChoice() {
@@ -43,9 +44,9 @@ public class ChatbotMenuClass {
                     System.out.println("Invalid input. Please enter a valid choice (0-4).");
                 }
             } catch (Exception e) {
-                System.out.println("Invalid input: " + e.getMessage());
+                System.out.println(e.getMessage());
+                System.out.println("Invalid input. Please enter a valid choice (0-4).");
                 //TODO: Display the options/menu again, instead of exit program
-                return -1;
             }
         }
     }
@@ -79,8 +80,8 @@ public class ChatbotMenuClass {
                     //--If: has enough money to pay for the plans
                     System.out.println("Yay!The fund in your account is sufficient to pay for this plan.");
                     //--Else if: don't have enough money to pay for the plans
-                    System.out.println("Unfortunately, it looks like you don't have enough fund in your account!");
-                    System.out.println("Please check your budgeting plans and/or contact your bank for further assistance");
+                    System.out.println("Unfortunately, it looks like you won't have enough fund in your account!");
+                    System.out.println("Please check your budgeting plans and/or contact your bank for further assistance.");
                     //--Else: has enough money, but will have low balance left from it
                     System.out.println("Good news! You have enough fund to pay for this plan. However, please note that you will have a low balance from it.");
                     System.out.println("Please check your budgeting plans.");
@@ -111,10 +112,43 @@ public class ChatbotMenuClass {
                     String userPlanPaymentInput = sc.nextLine();  // Read user input
 
                     // Based on the Plan's cost and user's balance, provide info: can/cannot afford
+                    //TODO: Complete these if-statements
+                    //--If: Optional Plan
+                    //-----If: Can Afford
+                    System.out.println("Yay!The fund in your account is sufficient to pay for this plan.");
+                    //-----Else if: Can Afford, but will limit other spendings
+                    System.out.println("Good news! You have enough fund to pay for this plan. However, please note that you will have a low balance from it.");
+                    System.out.println("Please check your budgeting plans.");
+                    //-----Else if: Cannot Afford just yet
+                    System.out.println("Unfortunately, it looks like you won't have enough fund in your account just yet!");
+                    System.out.println("Please check your budgeting plans and/or contact your bank for further assistance.");
+                    //-----Else: Cannot Afford
+                    System.out.println("Unfortunately, it looks like you won't have enough fund in your account!");
+                    System.out.println("Please check your budgeting plans and/or contact your bank for further assistance.");
+
+                    //--Else if: Essential Plan
+                    //-----If: Can Afford
+                    System.out.println("Yay!The fund in your account is sufficient to pay for this plan.");
+                    //-----Else if: Can Afford, but will limit other spendings
+                    System.out.println("Good news! You have enough fund to pay for this plan. However, please note that you will have a low balance from it.");
+                    System.out.println("Please check your budgeting plans.");
+                    //-----Else if: Cannot Afford just yet
+                    System.out.println("Unfortunately, it looks like you won't have enough fund in your account just yet!");
+                    System.out.println("As you are considering this an essential plan, please reduce and/or cancel subscription for one of your optional plans");
+                    System.out.println("Please check your budgeting plans and/or contact your bank for further assistance.");
+                    //-----Else: Cannot Afford
+                    System.out.println("Unfortunately, it looks like you won't have enough fund in your account!");
+                    System.out.println("As you are considering this an essential plan, please check your budgeting plans and/or contact your bank for further assistance.");
+
+                    //--Else: Recreational Plan????
+                    System.out.println("Good news! You have enough fund to pay for this plan. ");
 
                     break;
+
+                // Option 4: Show tips and tricks for budgeting
                 case 4:
-                    System.out.println();
+                    System.out.println("Here are some tips and tricks for budgeting. Please click on one of these articles and explore them!");
+                    //TODO: List of articles from website
                     break;
                 default:
                     break;
