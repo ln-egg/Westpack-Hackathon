@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.sql.Connection;
 
 public class MainApplication extends Application {
+    public static final int WIDTH = 350;
+    public static final int HEIGHT = 740;
 
     private SqliteExpensesDAO expensesDAO;
     private Expenses tExpense;
@@ -35,9 +37,10 @@ public class MainApplication extends Application {
         int optionalExpenses = expensesDAO.getTotalExpensesOnType("Optional");
         System.out.println("Total optional Expenses: " + optionalExpenses);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("homepage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);
+        stage.setTitle("Chatbot");
         stage.setScene(scene);
         stage.show();
     }
