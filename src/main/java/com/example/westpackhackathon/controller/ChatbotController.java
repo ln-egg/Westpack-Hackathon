@@ -1,7 +1,6 @@
 package com.example.westpackhackathon.controller;
 
 import com.example.westpackhackathon.MainApplication;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomepageController {
+public class ChatbotController {
     @FXML
     private Button HomeButton;
     @FXML
