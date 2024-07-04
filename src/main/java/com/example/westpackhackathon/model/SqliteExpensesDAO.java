@@ -76,4 +76,31 @@ public class SqliteExpensesDAO implements IExpensesDAO {
         }
         return null;
     }
+
+    /*      + "ID_Expenses INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + "Type VARCHAR NOT NULL,"
+            + "Name VARCHAR NOT NULL,"
+            + "Amount INTEGER NOT NULL"**/
+
+    //@Override
+//    public Expenses getTotalExpenses(String type) {
+//        try {
+//            String query = "SELECT SUM(Amount) FROM Revenue WHERE Type = ?";
+//            PreparedStatement statement = connection.prepareStatement(query);
+//            statement.setString(1, type);
+//            ResultSet resultSet = statement.executeQuery();
+//
+//            if (resultSet.next()) {
+//                int id = resultSet.getInt("ID_Expenses");
+//                //Expenses.Type_Expenses type = Expenses.Type_Expenses.valueOf(resultSet.getString("Type"));
+//                String expenseName = resultSet.getString("Name");
+//                int totalExpensese = resultSet.getInt("Amount");
+////                Expenses expenses = new Expenses(id, type, expenseName, amount);
+//                return totalExpenses;
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 }
