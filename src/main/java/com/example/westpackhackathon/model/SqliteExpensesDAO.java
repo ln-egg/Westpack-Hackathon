@@ -10,7 +10,7 @@ public class SqliteExpensesDAO implements IExpensesDAO {
     private Connection connection;
 
     public SqliteExpensesDAO() {
-        connection = SqliteConnection.getInstance().getConnection();
+        connection = SqliteConnection.getInstance();
         createTable();
     }
 

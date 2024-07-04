@@ -10,7 +10,7 @@ public class SqliteRevenueDAO implements IRevenueDAO {
 
     public SqliteRevenueDAO()
     {
-        connection = SqliteConnection.getInstance().getConnection();
+        connection = SqliteConnection.getInstance();
         createTable();
     }
 
