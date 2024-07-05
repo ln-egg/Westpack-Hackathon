@@ -19,7 +19,7 @@ public class SqliteRevenueDAO implements IRevenueDAO {
             Statement statement = connection.createStatement();
             String query = "CREATE TABLE IF NOT EXISTS revenue ("
                     + "ID_Revenue INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    + "Type VARCHAR NOT NULL,"
+                    + "Type ENUM NOT NULL,"
                     + "Name VARCHAR NOT NULL,"
                     + "Amount INTEGER NOT NULL"
                     + ")";
