@@ -106,7 +106,7 @@ public class ChatbotController {
                 try {
                     messages.add(new ChatEntry(Cleo.Choices(Integer.parseInt(message)), MessageType.BOT));
                 } catch(Exception e) {
-                    messages.add(new ChatEntry(e.getMessage(), MessageType.BOT));
+                    break;
                 }
                 break;
             case 1:
