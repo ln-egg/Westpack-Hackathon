@@ -6,4 +6,10 @@ public interface IExpensesDAO {
     public void removeExpenses (Expenses expenses);
 
     public Expenses getExpenses (String Name);
+
+    double OptionalPercentage();
+
+    double EssentialPercentage();
+
+    double RecreationalPercentage();
 }
