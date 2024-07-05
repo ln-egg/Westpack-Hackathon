@@ -12,7 +12,6 @@ public class ChatBot {
                     state = 1;
                     return ChatbotString.DisplayPlan + "\nPlans\n1. ...\n" + ChatbotString.DisplayOption1 + "\n" + ChatbotString.ModifyPlanOption;
                 case 2:
-                    state = 2;
                     return ChatbotString.SufficientFundMessage;
                 case 3:
                     state = 3;
@@ -29,6 +28,12 @@ public class ChatBot {
         } catch (Exception e) {
             return ChatbotString.ParseErrorMessage;
         }
+    }
+    public String Option1(int choice){
+        return "";
+    }
+    public String Option3(int choice){
+        return "";
     }
     public void setState(int state) {
         this.state = state;
