@@ -12,8 +12,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainApplication extends Application {
-    public static final int WIDTH = 350;
-    public static final int HEIGHT = 740;
 
     private SqliteExpensesDAO expensesDAO;
     private Expenses tExpense;
@@ -30,7 +28,7 @@ public class MainApplication extends Application {
         tRevenue = new Revenue(0, Revenue.Type_Revenue.Transfer, "", 0);
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("homepage.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);
+        Scene scene = new Scene(fxmlLoader.load(), ApplicationInfo.WIDTH, ApplicationInfo.HEIGHT);
         stage.setTitle("Chatbot");
         stage.setScene(scene);
         stage.show();
