@@ -53,7 +53,20 @@ public class ChatBot {
         return "";
     }
     public String Option3(int choice){
-        return "";
+        try {
+            switch (choice) {
+                case 1:
+                    return "";
+                case 2:
+                    return "";
+                case 0:
+                    return "";
+                default:
+                    return "";
+            }
+        } catch (Exception e) {
+            return ChatbotString.ParseErrorMessage;
+        }
     }
     public void setState(int state) {
         this.state = state;
