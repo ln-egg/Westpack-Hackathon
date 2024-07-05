@@ -11,25 +11,25 @@ public class FinancialCalculator {
 
     public double calculateProfit() {
         double totalRevenue = revenueDAO.getTotalRevenue();
-        double totalExpenses = expensesDAO.getTotalAmount();
+        double totalExpenses = expensesDAO.getTotalExpenses();
         return totalRevenue - totalExpenses;
     }
 
     public double calculateWantsPercentage() {
-        double totalOptional = expensesDAO.OptionalPercentage();
-        double totalRecreational = expensesDAO.RecreationalPercentage();
+        double totalOptional = expensesDAO.getTotalExpensesOnType("Optional");
+        double totalRecreational = expensesDAO.getTotalExpensesOnType("Recreational");
 
         return totalOptional + totalRecreational;
     }
 
     public double calculateNeedsPercentage() {
-        double totalEssential = expensesDAO.EssentialPercentage();
+        double totalEssential = expensesDAO.getTotalExpensesOnType("Essential");
         return totalEssential;
     }
 
     public double calculateSavingsPercentage() {
         double totalRevenue = revenueDAO.getTotalRevenue();
-        double totalExpenses = expensesDAO.getTotalAmount();
+        double totalExpenses = expensesDAO.getTotalExpenses();
         return (totalRevenue - totalExpenses) / totalRevenue * 100;
     }
 
