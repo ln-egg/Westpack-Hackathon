@@ -1,5 +1,6 @@
 package com.example.westpackhackathon.controller;
 
+import com.example.westpackhackathon.ApplicationInfo;
 import com.example.westpackhackathon.MainApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,13 +19,13 @@ public class HomepageController {
     public void onHomeButtonClick() throws IOException {
         Stage stage = (Stage) HomeButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("homepage.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 350, 740);
+        Scene scene = new Scene(fxmlLoader.load(), ApplicationInfo.WIDTH, ApplicationInfo.HEIGHT);
         stage.setScene(scene);
     }
     public void onChatbotButtonClick() throws IOException {
         Stage stage = (Stage) ChatbotButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("chatbotpage.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 350, 740);
+        Scene scene = new Scene(fxmlLoader.load(), ApplicationInfo.WIDTH, ApplicationInfo.HEIGHT);
         stage.setScene(scene);
     }
 }
