@@ -8,4 +8,6 @@ public interface IRevenueDAO {
     public Revenue getRevenue(String Name);
 
     int getTotalRevenue();
+
+    int getTotalRevenueOnType(String type);
 }
