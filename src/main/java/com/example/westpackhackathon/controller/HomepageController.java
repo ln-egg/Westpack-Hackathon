@@ -2,8 +2,6 @@ package com.example.westpackhackathon.controller;
 
 import com.example.westpackhackathon.ApplicationInfo;
 import com.example.westpackhackathon.MainApplication;
-import com.example.westpackhackathon.model.MessageDisplay;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
