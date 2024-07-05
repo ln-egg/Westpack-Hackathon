@@ -8,4 +8,6 @@ module com.example.westpackhackathon {
     exports com.example.westpackhackathon;
     exports com.example.westpackhackathon.controller;
     opens com.example.westpackhackathon.controller to javafx.fxml;
+    exports com.example.westpackhackathon.model;
+    opens com.example.westpackhackathon.model to javafx.fxml;
 }
