@@ -105,7 +105,7 @@ public class SqliteExpensesDAO implements IExpensesDAO {
         return (typeAmount / totalAmount) * 100;
     }
 
-    private double getTotalAmount() {
+    public double getTotalAmount() {
         double totalAmount = 0;
         try {
             String query = "SELECT SUM(Amount) AS TotalAmount FROM expenses";
