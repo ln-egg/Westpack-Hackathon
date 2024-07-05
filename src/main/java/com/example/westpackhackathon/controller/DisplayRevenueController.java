@@ -6,19 +6,26 @@ import com.example.westpackhackathon.MainApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class DisplayRevenueController {
+public class DisplayRevenueController implements Initializable {
 
     @FXML
     private Button ChatbotButton;
 
     @FXML
     private Button HomeButton;
+    @FXML
+    private Label totalRevenueAmountLabel;
+
 
     @FXML
     void onChatbotButtonClick(ActionEvent event) throws IOException {
@@ -36,4 +43,8 @@ public class DisplayRevenueController {
         stage.setScene(scene);
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        totalRevenueAmountLabel.setText("AHOJ");
+    }
 }

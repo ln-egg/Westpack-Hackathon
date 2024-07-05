@@ -70,7 +70,7 @@
                      <Font size="30.0" />
                   </font>
                </Label>
-               <Label text="   1000">
+               <Label text="   1000" fx:id="totalRevenueAmountLabel">
                   <font>
                      <Font size="30.0" />
                   </font>

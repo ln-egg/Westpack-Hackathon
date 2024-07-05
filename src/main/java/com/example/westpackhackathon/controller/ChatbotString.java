@@ -102,6 +102,6 @@ public class ChatbotString {
 
 
     // Option 4: Show tips and tricks for budgeting
-    public String TipsTrickMessage = "Here are some tips and tricks for budgeting. Please click on one of these articles and explore them!";
+    public String TipsTrickMessage = "Here are some tips and tricks for budgeting. Please click on one of these articles and explore them!";}
 
 
