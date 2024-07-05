@@ -94,7 +94,6 @@ public class SqliteRevenueDAO implements IRevenueDAO {
         return totalRevenueResult;
     }
 
-    /** This to get the total amount of each type of expenses*/
     @Override
     public int getTotalRevenueOnType(String type) {
         int totalRevenueOnTypeResult = 0;
