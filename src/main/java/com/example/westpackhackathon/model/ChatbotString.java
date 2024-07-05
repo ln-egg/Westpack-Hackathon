@@ -32,20 +32,20 @@ public class ChatbotString {
     public static String ModifyPlanOption = """
             1. Add Plan
             2. Remove Plan
-            0. Exit Chatbot
-            """;
+            0. Exit Chatbot""";
     public String ChoicePrompt2 = "Enter your choice (1-2) or press 0 to exit: ";
 
 
     // Option 2: Check fund sufficiency for current Plan(s)
-    public String DisplayCost = "For this month, you will need to pay an amount of $__.__ for your plans";
+    public static String DisplayCost1 = "For this month, you will need to pay an amount of $";
+    public static String DisplayCost2 = ".00 for your plans";
     //--If: has enough money to pay for the plans
     public static String SufficientFundMessage = "Yay!The fund in your account is sufficient to pay for this plan.";
     //--Else if: don't have enough money to pay for the plans
-    public String InsufficientFundMessage = "Unfortunately, it looks like you won't have enough fund in your account!" +
+    public static String InsufficientFundMessage = "Unfortunately, it looks like you won't have enough fund in your account!" +
             " Please check your budgeting plans and/or contact your bank for further assistance.";
     //--Else: has enough money, but will have low balance left from it
-    public String LowBalanceMessage = "Good news! You have enough fund to pay for this plan. However, please note that you will have a low balance from it." +
+    public static String LowBalanceMessage = "Good news! You have enough fund to pay for this plan. However, please note that you will have a low balance from it." +
             " Please check your budgeting plans.";
 
 
@@ -55,8 +55,7 @@ public class ChatbotString {
     public static String AddPlanOption = """
             1. Optional Plan
             2. Essential Plan
-            0. Exit
-            """;
+            0. Exit""";
     // User is asked to pick one of the options
     // USE THIS public String ChoicePrompt2 = "Enter your choice (1-2) or press 0 to exit: ";
 
@@ -68,8 +67,7 @@ public class ChatbotString {
     public String PlanFrequencyOption = """
             1. Per Week
             2. Per Month
-            3. Per Year
-            """;
+            3. Per Year""";
 
     // Based on the Plan's cost and user's balance, provide info: can/cannot afford
     //--If: Optional Plan

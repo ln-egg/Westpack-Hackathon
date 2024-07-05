@@ -5,8 +5,14 @@ import java.util.List;
 
 public class ChatBot {
     private int state;
+    private SqliteRevenueDAO revenueDAO;
+    private SqliteExpensesDAO expensesDAO;
+    private FinancialCalculator fC;
     public ChatBot() {
         state = 0;
+        fC = new FinancialCalculator();
+        revenueDAO = new SqliteRevenueDAO();
+        expensesDAO = new SqliteExpensesDAO();
     }
     public String Choices(int choice) {
         try {
@@ -15,7 +21,14 @@ public class ChatBot {
                     state = 1;
                     return ChatbotString.DisplayPlan + "\nPlans\n1. ...\n" + ChatbotString.DisplayOption1 + "\n" + ChatbotString.ModifyPlanOption;
                 case 2:
-                    return ChatbotString.SufficientFundMessage;
+                    switch(fC.budgetRuleResult()) {
+                        case 0:
+                            return ChatbotString.DisplayCost1 + expensesDAO.getTotalExpensesOnType("Optional") + ChatbotString.DisplayCost2 +"\n" + ChatbotString.SufficientFundMessage + "\n" + ChatbotString.StartOption + "\n" + ChatbotString.ChoicePrompt;
+                        case 1:
+                            return ChatbotString.DisplayCost1 + expensesDAO.getTotalExpensesOnType("Optional") + ChatbotString.DisplayCost2 +"\n" + ChatbotString.LowBalanceMessage + "\n" + ChatbotString.StartOption + "\n" + ChatbotString.ChoicePrompt;
+                        case 2:
+                            return ChatbotString.InsufficientFundMessage + "\n" + ChatbotString.StartOption + "\n" + ChatbotString.ChoicePrompt;
+                    }
                 case 3:
                     state = 3;
                     return ChatbotString.AddPlanMessage + "\n" + ChatbotString.AddPlanOption;
