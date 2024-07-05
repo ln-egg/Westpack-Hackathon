@@ -1,5 +1,6 @@
 package com.example.westpackhackathon;
 
+import com.example.westpackhackathon.controller.Table;
 import com.example.westpackhackathon.model.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.List;
 
 public class MainApplication extends Application {
     public static final int WIDTH = 350;
@@ -28,6 +30,7 @@ public class MainApplication extends Application {
         revenueDAO = new SqliteRevenueDAO();
         tRevenue = new Revenue(0, Revenue.Type_Revenue.Transfer, "", 0);
 
+
         // this is the sample how to access the total amount of expenses
         int totalExpenses = expensesDAO.getTotalExpenses();
         System.out.println("Total Expenses: " + totalExpenses);
@@ -36,6 +39,19 @@ public class MainApplication extends Application {
          * */
         int optionalExpenses = expensesDAO.getTotalExpensesOnType("Optional");
         System.out.println("Total optional Expenses: " + optionalExpenses);
+
+        int totalRevenue = revenueDAO.getTotalRevenue();
+        System.out.println("Total Revenue: " + totalRevenue);
+
+        int payrollRevenue = revenueDAO.getTotalRevenueOnType("Payroll");
+        System.out.println("Total Payroll Revenue : " + payrollRevenue);
+
+
+        //List<Expenses> tList = expensesDAO.getExpenseRecords("Optional");
+        //System.out.println(tList.size());
+
+        //new Table();
+
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("homepage.fxml"));
