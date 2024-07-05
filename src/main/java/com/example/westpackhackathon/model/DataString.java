@@ -36,7 +36,7 @@ public class DataString {
     public String DisplayPayrollRevenue = "Total Payroll Revenue : " + payrollRevenue;
 
     List<Expenses> tList = expensesDAO.getExpenseRecords("Optional");
-    //System.out.println(tList.size());
+    //System.out.println(tList);
 
     //new Table();
 
