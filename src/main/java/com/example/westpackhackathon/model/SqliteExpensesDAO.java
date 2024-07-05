@@ -19,7 +19,7 @@ public class SqliteExpensesDAO implements IExpensesDAO {
             Statement statement = connection.createStatement();
             String query = "CREATE TABLE IF NOT EXISTS expenses ("
                     + "ID_Expenses INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    + "Type VARCHAR NOT NULL,"
+                    + "Type ENUM NOT NULL,"
                     + "Name VARCHAR NOT NULL,"
                     + "Amount INTEGER NOT NULL"
                     + ")";
