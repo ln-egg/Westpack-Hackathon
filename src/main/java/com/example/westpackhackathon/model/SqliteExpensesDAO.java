@@ -1,9 +1,8 @@
 package com.example.westpackhackathon.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SqliteExpensesDAO implements IExpensesDAO {
 
@@ -114,5 +113,32 @@ public class SqliteExpensesDAO implements IExpensesDAO {
         }
         return totalExpenseOnTypeResult;
     }
+    @Override
+    /** "ID_Expenses INTEGER PRIMARY KEY AUTOINCREMENT,"
+     + "Type VARCHAR NOT NULL,"
+     + "Name VARCHAR NOT NULL,"
+     + "Amount INTEGER NOT NULL"
+     * */
+    public List<Expenses> getExpenseRecords(String type) {
 
+        List<Expenses> records = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM expenses WHERE Type = ? ORDER BY ID_Expenses DESC LIMIT 7";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, type);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("ID_Expenses");
+
+                Expenses.Type_Expenses typeList = Expenses.Type_Expenses.valueOf(resultSet.getString("Type"));
+                String expenseName = resultSet.getString("Name");
+                int amount = resultSet.getInt("Amount");
+                Expenses expenses = new Expenses(id, typeList, expenseName, amount);
+                records.add(expenses);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return records;
+    }
 }
