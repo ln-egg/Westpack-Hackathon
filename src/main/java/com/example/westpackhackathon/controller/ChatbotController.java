@@ -2,6 +2,7 @@ package com.example.westpackhackathon.controller;
 
 import com.example.westpackhackathon.ApplicationInfo;
 import com.example.westpackhackathon.MainApplication;
+import com.example.westpackhackathon.model.ChatBot;
 import com.example.westpackhackathon.model.ChatbotString;
 import com.example.westpackhackathon.model.MessageType;
 import javafx.beans.property.ObjectProperty;
@@ -25,7 +26,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ChatbotController {
-    public ObservableList<ChatEntry> messages;
+    private ChatBot Cleo;
+    private ObservableList<ChatEntry> messages;
     @FXML
     private ListView<ChatEntry> MessagesListView;
     @FXML
@@ -75,6 +77,7 @@ public class ChatbotController {
     }
     @FXML
     public void initialize() {
+        Cleo = new ChatBot();
         SendButton.setOnAction(event -> {
             try {
                 onSendButtonClick();
@@ -92,6 +95,26 @@ public class ChatbotController {
     public void onSendButtonClick() throws IOException {
         String message = MessageTextField.getText();
         messages.add(new ChatEntry(message, MessageType.USER));
+        switch(Cleo.getState()) {
+            case -1:
+                String temp = "Restarting...";
+                messages.add(new ChatEntry(temp, MessageType.BOT));
+                messages.add(new ChatEntry(ChatbotString.StartQuestion, MessageType.BOT));
+                messages.add(new ChatEntry(ChatbotString.StartOption, MessageType.BOT));
+                messages.add(new ChatEntry(ChatbotString.ChoicePrompt, MessageType.BOT));
+            case 0:
+                try {
+                    messages.add(new ChatEntry(Cleo.Choices(Integer.parseInt(message)), MessageType.BOT));
+                } catch(Exception e) {
+                    messages.add(new ChatEntry(e.getMessage(), MessageType.BOT));
+                }
+                break;
+            case 1:
+                break;
+            default:
+                break;
+        }
+        MessageTextField.clear();
     }
     public void onHomeButtonClick() throws IOException {
         Stage stage = (Stage) HomeButton.getScene().getWindow();
