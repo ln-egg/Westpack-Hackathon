@@ -6,4 +6,8 @@ public interface IRevenueDAO {
     public void removeRevenue(Revenue revenue);
 
     public Revenue getRevenue(String Name);
+
+    int getTotalRevenue();
+
+    int getTotalRevenueOnType(String type);
 }
