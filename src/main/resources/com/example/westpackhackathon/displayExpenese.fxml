@@ -15,9 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="740.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.westpackhackathon.controller.HomepageController">
-    <VBox alignment="TOP_CENTER" prefHeight="737.0" prefWidth="350.0">
-        <VBox alignment="TOP_CENTER" prefHeight="679.0" prefWidth="350.0">
+<AnchorPane prefHeight="640.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.westpackhackathon.controller.HomepageController">
+    <VBox alignment="TOP_CENTER" prefHeight="640.0" prefWidth="350.0">
+        <VBox alignment="TOP_CENTER" prefHeight="640.0" prefWidth="350.0">
             <HBox alignment="CENTER" prefHeight="68.0" prefWidth="351.0">
                 <opaqueInsets>
                     <Insets />
@@ -45,22 +45,22 @@
                 </Circle>
             </HBox>
             <Separator prefWidth="200.0" />
-         <Label prefHeight="47.0" prefWidth="333.0" text="Expenses">
+         <Label prefHeight="47.0" prefWidth="333.0" text="Expense">
             <font>
                <Font size="26.0" />
             </font>
          </Label>
          <TreeTableView prefHeight="476.0" prefWidth="350.0">
            <columns>
-             <TreeTableColumn prefWidth="70.00000250339508" text="ID_Revenue" />
+             <TreeTableColumn prefWidth="70.00000250339508" text="ID_Expenses" />
              <TreeTableColumn prefWidth="74.66667938232422" text="Type" />
                <TreeTableColumn prefWidth="111.33332824707031" text="Name" />
                <TreeTableColumn prefWidth="94.0" text="Amount" />
            </columns>
          </TreeTableView>
-         <HBox prefHeight="13.0" prefWidth="350.0">
+         <HBox prefHeight="61.0" prefWidth="350.0">
             <children>
-               <Label text="Total Revenue">
+               <Label text="Total Expense">
                   <font>
                      <Font size="30.0" />
                   </font>
@@ -70,7 +70,7 @@
                      <Font size="30.0" />
                   </font>
                </Label>
-               <Label text="   1000">
+               <Label text="   500">
                   <font>
                      <Font size="30.0" />
                   </font>
@@ -78,7 +78,7 @@
             </children>
          </HBox>
         </VBox>
-        <HBox alignment="CENTER" prefHeight="85.0" prefWidth="350.0">
+        <HBox alignment="CENTER" prefHeight="180.0" prefWidth="350.0">
             <Button fx:id="HomeButton" alignment="CENTER" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="41.0" prefWidth="70.0" text="Home">
                 <HBox.margin>
                     <Insets right="20.0" />

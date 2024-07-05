@@ -58,7 +58,7 @@
                     <Insets top="30.0" />
                 </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="85.0" prefWidth="289.0" text="Display Expenses" >
+            <Button mnemonicParsing="false" prefHeight="85.0" prefWidth="289.0" text="Display Expenses" onAction="#onDisplayExpenseButtonClick" fx:id="DisplayExpenseButton" >
                 <font>
                     <Font size="28.0" />
                 </font>

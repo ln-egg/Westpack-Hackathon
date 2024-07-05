@@ -17,7 +17,7 @@ public class HomepageController {
     @FXML
     private Button HomeButton;
     @FXML
-    private Button Expense;
+    private Button DisplayExpenseButton;
     @FXML
     private Button ChatbotButton;
     public void onDisplayRevenueButtonClick() throws IOException {
@@ -26,12 +26,12 @@ public class HomepageController {
         Scene scene = new Scene(fxmlLoader.load(), ApplicationInfo.WIDTH, ApplicationInfo.HEIGHT);
         stage.setScene(scene);
     }
-//    public void onDisplayExpeneseButtonClick() throws IOException {
-//        Stage stage = (Stage) Expense.getScene().getWindow();
-//        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("displayExpenese.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), ApplicationInfo.WIDTH, ApplicationInfo.HEIGHT);
-//        stage.setScene(scene);
-//    }
+    public void onDisplayExpenseButtonClick() throws IOException {
+        Stage stage = (Stage) DisplayExpenseButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("displayExpenese.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), ApplicationInfo.WIDTH, ApplicationInfo.HEIGHT);
+        stage.setScene(scene);
+    }
 
     public void onHomeButtonClick() throws IOException {
         Stage stage = (Stage) HomeButton.getScene().getWindow();
