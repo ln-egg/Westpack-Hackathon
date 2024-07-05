@@ -39,4 +39,13 @@ public class FinancialCalculator {
         double totalExpenses = expensesDAO.getTotalAmount();
         return totalRevenue - totalExpenses;
     }
+
+    public boolean budgetRuleResult()
+    {
+        /* create a method to determine whether the revenue and expenses of the user follows the 50/30/20 budget rule
+        * note that 100% = revenue, 50% = needs percentage, 30% = wants percentage, 20% = savings percentage
+        * note that if they follow the budget rule return "You follow the budget rule"
+        * if they do not follow the budget rule return "You do not follow the budget"
+        * if they are just under the budget rule (so within 10% of either categories) return "You are close to reaching the budget rules"*/
+    }
 }

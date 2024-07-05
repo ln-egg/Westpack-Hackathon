@@ -75,21 +75,4 @@ public class SqliteRevenueDAO implements IRevenueDAO {
         }
         return null;
     }
-
-    @Override
-    public double getTotalRevenue() {
-        double totalRevenue = 0;
-        try {
-            String query = "SELECT SUM(Amount) AS TotalRevenue FROM revenue";
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(query);
-
-            if (resultSet.next()) {
-                totalRevenue = resultSet.getDouble("TotalRevenue");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return totalRevenue;
-    }
 }
