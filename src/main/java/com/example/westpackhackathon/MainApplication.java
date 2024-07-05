@@ -47,12 +47,10 @@ public class MainApplication extends Application {
         System.out.println("Total Payroll Revenue : " + payrollRevenue);
 
 
-        //List<Expenses> tList = expensesDAO.getExpenseRecords("Optional");
-        //System.out.println(tList.size());
+        List<Expenses> tList = expensesDAO.getExpenseRecords("Optional");
+        System.out.println(tList.size());
 
         //new Table();
-
-
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("homepage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);

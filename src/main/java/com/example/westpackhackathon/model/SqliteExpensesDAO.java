@@ -123,7 +123,7 @@ public class SqliteExpensesDAO implements IExpensesDAO {
 
         List<Expenses> records = new ArrayList<>();
         try {
-            String query = "SELECT * FROM expenses ORDER BY ID_Expenses DESC LIMIT 7";
+            String query = "SELECT * FROM expenses WHERE Type = ? ORDER BY ID_Expenses DESC LIMIT 7";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, type);
             ResultSet resultSet = statement.executeQuery();

@@ -1,9 +1,12 @@
 package com.example.westpackhackathon.controller;
 
 // Packages to import
+import com.example.westpackhackathon.model.Expenses;
+
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import java.util.List;
 
 
 public class Table {
