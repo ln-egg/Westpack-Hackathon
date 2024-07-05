@@ -59,7 +59,7 @@ public class ChatbotMenuClass {
                 case 1:
                     System.out.println("Here are the plans you are currently on:");
                     //TODO: List all of user's plans
-                    System.out.println("What would you like to do?");
+                    System.out.println("What would you like to do? ");
                     // Dropdown button options:
                     System.out.println("1. Add Plan");
                     System.out.println("2. Remove Plan");
