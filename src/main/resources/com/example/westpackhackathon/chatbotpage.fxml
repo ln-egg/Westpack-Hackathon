@@ -44,7 +44,8 @@
             </HBox>
             <Separator prefWidth="200.0" />
             <HBox prefHeight="445.0" prefWidth="350.0">
-                <ListView prefHeight="444.0" prefWidth="337.0"/>
+                <ListView fx:id="MessagesListView"
+                          prefHeight="444.0" prefWidth="337.0"/>
                 <ScrollBar orientation="VERTICAL" prefHeight="444.0" prefWidth="0.0"/>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="350.0">
@@ -54,12 +55,19 @@
                 <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@images/Westpac-Logo.png" />
                 </ImageView>
-                <TextField prefHeight="25.0" prefWidth="223.0">
+                <TextField fx:id="MessageTextField"
+                           prefHeight="25.0" prefWidth="223.0">
                     <HBox.margin>
                         <Insets left="10.0" right="10.0" />
                     </HBox.margin>
                 </TextField>
-                <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="43.0" text="Send">
+                <Button mnemonicParsing="false"
+                        prefHeight="31.0"
+                        prefWidth="43.0"
+                        text="Send"
+                        onAction="#onSendButtonClick"
+                        fx:id="SendButton"
+                >
                 </Button>
             </HBox>
             <Separator prefWidth="200.0" />
