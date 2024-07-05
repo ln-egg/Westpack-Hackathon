@@ -4,9 +4,9 @@ public class FinancialCalculator {
     private SqliteRevenueDAO revenueDAO;
     private SqliteExpensesDAO expensesDAO;
 
-    public FinancialCalculator(SqliteRevenueDAO revenueDAO, SqliteExpensesDAO expensesDAO) {
-        this.revenueDAO = revenueDAO;
-        this.expensesDAO = expensesDAO;
+    public FinancialCalculator() {
+        revenueDAO = new SqliteRevenueDAO();
+        expensesDAO = new SqliteExpensesDAO();
     }
 
     public double calculateProfit() {
@@ -33,7 +33,7 @@ public class FinancialCalculator {
         return (totalRevenue - totalExpenses) / totalRevenue * 100;
     }
 
-    public String budgetRuleResult() {
+    public int budgetRuleResult() {
         double wantsPercentage = calculateWantsPercentage();
         double needsPercentage = calculateNeedsPercentage();
         double savingsPercentage = calculateSavingsPercentage();
@@ -43,11 +43,11 @@ public class FinancialCalculator {
 
         /* CHANGE THIS ACCORDING TO THE DIALOGUE*/
         if (followsRule) {
-            return "You follow the budget rule";
+            return 0; //"You follow the budget rule";
         } else if (closeToRule) {
-            return "You are close to reaching the budget rules";
+            return 1;//"You are close to reaching the budget rules";
         } else {
-            return "You do not follow the budget rule";
+            return 2;//"You do not follow the budget rule";
         }
     }
 }

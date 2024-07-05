@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="640.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.westpackhackathon.controller.HomepageController">
+<AnchorPane prefHeight="640.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.westpackhackathon.controller.HomepageController">
     <VBox alignment="TOP_CENTER" prefHeight="640.0" prefWidth="350.0">
         <VBox alignment="TOP_CENTER" prefHeight="640.0" prefWidth="350.0">
             <HBox alignment="CENTER" prefHeight="68.0" prefWidth="351.0">
