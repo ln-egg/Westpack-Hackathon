@@ -27,6 +27,11 @@ public class ChatbotString {
 
     // Option 1: Display Current Plans
     public static String DisplayPlan = "Here are the plans you are currently on:";
+    public static String ListPlan = """
+            1. Netflix $30.50
+            2. Youtube $16.99
+            3. Disney+ $14.50
+            """;
     public static String DisplayOption1 = "What would you like to do with your plan?";
     // Dropdown button options:
     public static String ModifyPlanOption = """

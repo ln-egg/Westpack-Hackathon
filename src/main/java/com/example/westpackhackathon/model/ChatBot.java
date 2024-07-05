@@ -19,7 +19,7 @@ public class ChatBot {
             switch (choice) {
                 case 1:
                     state = 1;
-                    return ChatbotString.DisplayPlan + "\nPlans\n1. ...\n" + ChatbotString.DisplayOption1 + "\n" + ChatbotString.ModifyPlanOption;
+                    return ChatbotString.DisplayPlan + "\n" + ChatbotString.ListPlan + "\n" + ChatbotString.DisplayOption1 + "\n" + ChatbotString.ModifyPlanOption;
                 case 2:
                     switch(fC.budgetRuleResult()) {
                         case 0:

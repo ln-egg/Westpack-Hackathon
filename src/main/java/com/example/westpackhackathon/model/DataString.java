@@ -1,6 +1,8 @@
 package com.example.westpackhackathon.model;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DataString {
     //private SqliteExpensesDAO expensesDAO;
@@ -9,7 +11,7 @@ public class DataString {
     //private SqliteRevenueDAO revenueDAO;
     //private Revenue tRevenue;
 
-    SqliteExpensesDAO expensesDAO = new SqliteExpensesDAO();
+    static SqliteExpensesDAO expensesDAO = new SqliteExpensesDAO();
     Expenses tExpense = new Expenses(0, Expenses.Type_Expenses.Optional, "", 0);
 
     SqliteRevenueDAO revenueDAO = new SqliteRevenueDAO();
@@ -35,8 +37,11 @@ public class DataString {
     //System.out.println("Total Payroll Revenue : " + payrollRevenue);
     public String DisplayPayrollRevenue = "Total Payroll Revenue : " + payrollRevenue;
 
-    List<Expenses> tList = expensesDAO.getExpenseRecords("Optional");
-    //System.out.println(tList.size());
+    static List<Expenses> tList = expensesDAO.getExpenseRecords("Optional");
+
+
+
+    //System.out.println(tList);
 
     //new Table();
 
