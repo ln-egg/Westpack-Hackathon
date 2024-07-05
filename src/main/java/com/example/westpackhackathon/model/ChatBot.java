@@ -1,5 +1,8 @@
 package com.example.westpackhackathon.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ChatBot {
     private int state;
     public ChatBot() {
@@ -29,6 +32,10 @@ public class ChatBot {
             return ChatbotString.ParseErrorMessage;
         }
     }
+//    public DisplayPlans() {
+//        List<String> list = new ArrayList<>();
+//
+//    }
     public String Option1(int choice){
         return "";
     }
