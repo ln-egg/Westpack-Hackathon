@@ -76,20 +76,39 @@ public class SqliteRevenueDAO implements IRevenueDAO {
         return null;
     }
 
-    @Override
-    public int getTotalRevenue() {
-        int totalRevenueResult = 0;
+ @Override
+    public int getTotalExpenses() {
+        int totalExpenseResult = 0;
         try {
-            String query = "SELECT SUM(Amount) as Total FROM revenue";
+            String query = "SELECT SUM(Amount) as Total FROM expenses";
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                totalRevenueResult = resultSet.getInt("Total");
+                totalExpenseResult = resultSet.getInt("Total");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return totalRevenueResult;
+        return totalExpenseResult;
+    }
+
+    /** This to get the total amount of each type of expenses*/
+    @Override
+    public int getTotalExpensesOnType(String type) {
+        int totalExpenseOnTypeResult = 0;
+        try {
+            String query = "SELECT SUM(Amount) as Total FROM expenses WHERE Type = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, type);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                totalExpenseOnTypeResult = resultSet.getInt("Total");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return totalExpenseOnTypeResult;
     }
 }
