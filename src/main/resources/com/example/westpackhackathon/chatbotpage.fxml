@@ -69,7 +69,6 @@
                         prefHeight="31.0"
                         prefWidth="43.0"
                         text="Send"
-                        onAction="#onSendButtonClick"
                         fx:id="SendButton"
                 >
                 </Button>

@@ -2,6 +2,7 @@ package com.example.westpackhackathon.controller;
 
 import com.example.westpackhackathon.ApplicationInfo;
 import com.example.westpackhackathon.MainApplication;
+import com.example.westpackhackathon.model.ChatbotString;
 import com.example.westpackhackathon.model.MessageType;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -74,13 +75,23 @@ public class ChatbotController {
     }
     @FXML
     public void initialize() {
+        SendButton.setOnAction(event -> {
+            try {
+                onSendButtonClick();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
         messages = FXCollections.observableArrayList();
         MessagesListView.setCellFactory(list -> new ChatCell());
         MessagesListView.setItems(messages);
-        messages.add(new ChatEntry("Hello", MessageType.BOT));
+        messages.add(new ChatEntry(ChatbotString.StartQuestion, MessageType.BOT));
+        messages.add(new ChatEntry(ChatbotString.StartOption, MessageType.BOT));
+        messages.add(new ChatEntry(ChatbotString.ChoicePrompt, MessageType.BOT));
     }
     public void onSendButtonClick() throws IOException {
-        messages.add(new ChatEntry(MessageTextField.getText(), MessageType.USER));
+        String message = MessageTextField.getText();
+        messages.add(new ChatEntry(message, MessageType.USER));
     }
     public void onHomeButtonClick() throws IOException {
         Stage stage = (Stage) HomeButton.getScene().getWindow();
