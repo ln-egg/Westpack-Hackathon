@@ -1,9 +1,6 @@
 package com.example.westpackhackathon;
 
-import com.example.westpackhackathon.model.Expenses;
-import com.example.westpackhackathon.model.Revenue;
-import com.example.westpackhackathon.model.SqliteExpensesDAO;
-import com.example.westpackhackathon.model.SqliteRevenueDAO;
+import com.example.westpackhackathon.model.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
